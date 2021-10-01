@@ -1,9 +1,15 @@
 import React from 'react';
-import "./Footer.scss"
+import './Footer.scss';
 function Footer() {
   return (
     <div className="footer">
-      
+      <p>
+        Created by <b>Celal Can Kurt</b>
+        <a href="https://github.com/cllcnkrt" target="_blank">
+          {' '}
+          <i class="fab fa-github"></i>
+        </a>
+      </p>
     </div>
   );
 }

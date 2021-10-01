@@ -2,7 +2,7 @@ import React from 'react';
 import './Main.scss';
 import Card from './card/Card';
 
-function Main({ setModalOpen, data, handleEdit,handleDelete }) {
+function Main({ setModalOpen, data, handleEdit, handleDelete }) {
   return (
     <div className="main">
       {data.map((post) => (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Modal.css';
+import './Modal.scss';
 
 function Modal({ setModalOpen, onConfirmCard, editedCard }) {
   const initialStars = ['1', '1', '1', '0', '0'];

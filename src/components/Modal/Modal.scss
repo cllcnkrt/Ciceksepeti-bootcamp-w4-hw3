@@ -1,0 +1,91 @@
+.modalBackground {
+  width: 100vw;
+  height: 100vh;
+  background-color: #effdf9;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modalContainer {
+    width: 500px;
+    min-height: 600px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+
+    .modalContainer .title {
+      display: inline-block;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .titleCloseBtn {
+      display: flex;
+      justify-content: flex-end;
+
+      button {
+        background-color: transparent;
+        border: none;
+        font-size: 25px;
+        cursor: pointer;
+      }
+
+    }
+
+    .buttons {
+      flex: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      button {
+        width: 150px;
+        height: 45px;
+        margin: 10px;
+        border: none;
+        background-color: #04a554;
+        color: white;
+        border-radius: 8px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+#cancelBtn {
+  background-color: #be0000;
+}
+
+.card {
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px -45px #04a554;
+  margin-right: 0px;
+  width: 300px;
+  min-height: 420px;
+  position: relative;
+  margin: 25px;
+}
+
+.card__body {
+  margin-top: 20px;
+  text-align: center;
+
+  img {
+    width: 80%;
+    border-radius: 20px;
+  }
+
+  &-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #111127;
+  }
+}

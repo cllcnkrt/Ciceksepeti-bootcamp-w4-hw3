@@ -5,7 +5,8 @@ import Footer from './components/footer/Footer';
 import Modal from './components/Modal/Modal';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const [modalOpen, setModalOpen] = useState(false);
   const [data, setData] = useState([]);
@@ -16,6 +17,15 @@ function App() {
   const handleDelete = (id) => {
     const deletedData = filteredData.filter((item) => item.id !== id);
     setFilteredData(deletedData);
+    toast.error('Food deleted!', {
+      position: 'top-right',
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
   const handleSearch = (searchedData) => {
     setInputText(searchedData);
@@ -37,6 +47,15 @@ function App() {
     editedFood = { ...editedFood, stars };
     newData = [...newData, editedFood].sort((a, b) => a.id - b.id);
     setFilteredData(newData);
+    toast.success('Edited successfully', {
+      position: 'top-right',
+      autoClose: 3000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
   useEffect(() => {
@@ -67,6 +86,17 @@ function App() {
           editedCard={editedCard}
         />
       )}
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 }

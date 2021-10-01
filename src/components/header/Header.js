@@ -7,7 +7,7 @@ function Header({ handleSearch }) {
 
   const handleInput = (e) => {
     setInputText(e.target.value);
-    handleSearch(e.target.value); //InputText
+    handleSearch(e.target.value); 
   };
   return (
     <div className="header">
