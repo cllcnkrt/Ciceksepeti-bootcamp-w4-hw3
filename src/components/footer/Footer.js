@@ -5,7 +5,7 @@ function Footer() {
     <div className="footer">
       <p>
         Created by <b>Celal Can Kurt</b>
-        <a href="https://github.com/cllcnkrt" target="_blank">
+        <a href="https://github.com/cllcnkrt">
           {' '}
           <i class="fab fa-github"></i>
         </a>
