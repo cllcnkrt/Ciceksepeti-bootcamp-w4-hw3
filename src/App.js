@@ -14,29 +14,29 @@ function App() {
   const [filteredData, setFilteredData] = useState([]);
 
   const handleDelete = (id) => {
-    const deletedData = data.filter((item) => item.id !== id);
+    const deletedData = filteredData.filter((item) => item.id !== id);
     setFilteredData(deletedData);
   };
   const handleSearch = (searchedData) => {
     setInputText(searchedData);
     const filtered = data.filter((item) =>
-    Object.keys(item).some((key) =>
-    item[key].toString().toLowerCase().includes(InputText.toLowerCase())
-    )
+      Object.keys(item).some((key) =>
+        item[key].toString().toLowerCase().includes(InputText.toLowerCase())
+      )
     );
     setFilteredData(filtered);
   };
   const handleEdit = (id) => {
     setModalOpen(true);
-    const thisFood = data.find((item) => item.id === id);
+    const thisFood = filteredData.find((item) => item.id === id);
     setEditedCard(thisFood);
   };
   const onConfirmCard = (id, stars) => {
-    let newData = data.filter((item) => item.id !== id);
-    let editedFood = data.find((item) => item.id === id);
+    let newData = filteredData.filter((item) => item.id !== id);
+    let editedFood = filteredData.find((item) => item.id === id);
     editedFood = { ...editedFood, stars };
     newData = [...newData, editedFood].sort((a, b) => a.id - b.id);
-    setData(newData);
+    setFilteredData(newData);
   };
 
   useEffect(() => {
@@ -62,7 +62,7 @@ function App() {
       {modalOpen && (
         <Modal
           setModalOpen={setModalOpen}
-          data={data}
+          data={filteredData}
           onConfirmCard={onConfirmCard}
           editedCard={editedCard}
         />

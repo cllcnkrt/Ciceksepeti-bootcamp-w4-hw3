@@ -28,13 +28,7 @@ function Modal({ setModalOpen, onConfirmCard, editedCard }) {
     <div className="modalBackground">
       <div className="modalContainer">
         <div className="titleCloseBtn">
-          <button
-            onClick={() => {
-              setModalOpen(false);
-            }}
-          >
-            X
-          </button>
+          <button onClick={() => setModalOpen(false)}>X</button>
         </div>
         <div className="card__body">
           <div className="card__body-image">
@@ -55,7 +49,7 @@ function Modal({ setModalOpen, onConfirmCard, editedCard }) {
           </button>
           <button
             onClick={() => {
-              onConfirmCard(editedCard.id, stars)
+              onConfirmCard(editedCard.id, stars);
               setModalOpen(false);
             }}
           >
